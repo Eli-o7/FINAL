@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3R Regiones | Reserva</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="imagenes/logo-3r-regiones.png" alt="Logo 3R Regiones" />
+        <span>Regiones</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="carta.html">Carta</a></li>
+          <li><a href="locales.html">Locales</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="reverva.html" class="btn-reserva">Reserva</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="reserva-page">
+      <div class="reserva-overlay">
+        <h1>Reserva</h1>
+        <form class="reserva-form form-grid">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electronico</label>
+            <input type="email" id="correo" name="correo" />
+          </div>
+          <div class="form-group">
+            <label for="personas">Cuantas Personas</label>
+            <input type="number" id="personas" name="personas" min="1" />
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" />
+          </div>
+          <div class="form-group">
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" name="hora" />
+          </div>
+          <div class="form-group">
+            <label for="local">Local</label>
+            <input type="text" id="local" name="local" />
+          </div>
+          <div class="form-group note-area">
+            <label for="nota">Nota</label>
+            <textarea id="nota" name="nota" rows="3"></textarea>
+          </div>
+
+          <div class="submit-button-container">
+            <button type="submit" class="btn-submit">ENVIAR</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  /* Encabezado */
+  header {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  header .logo img {
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  header .logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  header nav ul li {
+    margin-left: 20px;
+  }
+
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  header nav ul li a.btn-reserva {
+    background-color: #007bff;
+    font-weight: normal;
+    border: none;
+  }
+
+  header nav ul li a.btn-reserva:hover {
+    background-color: #0056b3;
+  }
+
+  /* Contenedor Principal con Fondo de Imagen */
+  main.reserva-page {
+    position: relative;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
+    overflow: hidden;
+  }
+
+  main.reserva-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* REEMPLAZA ESTA URL CON TU IMAGEN REAL */
+    background-image: url("URL_DE_TU_IMAGEN_DE_FONDO");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: -1;
+  }
+
+  /* Contenedor del Formulario Semitransparente */
+  .reserva-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px 40px;
+    border-radius: 5px;
+    max-width: 850px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  /* Título "Reserva" */
+  .reserva-overlay h1 {
+    font-family: "Georgia", serif;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  /* Layout del Formulario (Grid) */
+  .reserva-form.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-group.note-area {
+    grid-column: span 2;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: normal;
+    color: white;
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+  }
+
+  /* Botón ENVIAR */
+  .submit-button-container {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .btn-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 40px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+  }
+
+  .btn-submit:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+  }
+</style>
