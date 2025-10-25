@@ -8,20 +8,19 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="imagenes/logo-3r-regiones.png" alt="Logo 3R Regiones" />
-        <span>Regiones</span>
+        <div class="logo">
+          <img src="/imagenes/logo.jpg" alt="Logo 3R Regiones">
       </div>
-
-      <nav>
-        <ul>
-          <li><a href="carta.html">Carta</a></li>
-          <li><a href="locales.html">Locales</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="reverva.html" class="btn-reserva">Reserva</a></li>
-        </ul>
-      </nav>
-    </header>
+      
+        <nav>
+          <ul>
+            <li><a href="carta.html">Carta</a></li>
+            <li><a href="locales.html">Locales</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="reverva.html" class="btn-reserva">Reserva</a></li>
+          </ul>
+        </nav>
+      </header>
 
     <main class="reserva-page">
       <div class="reserva-overlay">
@@ -72,59 +71,50 @@
 
   /* Encabezado */
   header {
-    background-color: #2c3e50;
-    padding: 10px 20px;
+    background-color: #273D62;
+    color: white;
+    padding: 15px 40px;
+    height: 80px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-  }
+}
 
-  header .logo {
+.logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
     display: flex;
     align-items: center;
-  }
+    gap: 30px;
+}
 
-  header .logo img {
-    height: 40px;
-    margin-right: 5px;
-  }
-
-  header .logo span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #007bff;
-  }
-
-  header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-
-  header nav ul li {
-    margin-left: 20px;
-  }
-
-  header nav ul li a {
+header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.btn-reserva {
+    background-color: transparent;
+    border: 2px solid white;
     padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-  header nav ul li a.btn-reserva {
-    background-color: #007bff;
-    font-weight: normal;
-    border: none;
-  }
+.btn-reserva:hover {
+    background-color: white;
+    color: #2c3e50;
+}
 
-  header nav ul li a.btn-reserva:hover {
-    background-color: #0056b3;
-  }
 
   /* Contenedor Principal con Fondo de Imagen */
   main.reserva-page {
