@@ -17,7 +17,7 @@
         <li><a href="carta.html">Carta</a></li>
         <li><a href="locales.html">Locales</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="reservas.html">Reserva</a></li>
+        <li><a href="reverva.html" class="btn-reserva">Reserva</a></li>
       </ul>
     </nav>
   </header>
@@ -74,9 +74,51 @@
     color: white; /* Cambia el color del texto a blanco para hacerlo visible sobre el fondo */
     }
 
-    .logo img {
-    height: 50px;
-    }
+    header {
+  background-color: #273D62;
+  color: white;
+  padding: 15px 40px;
+  height: 80px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.btn-reserva {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-reserva:hover {
+  background-color: white;
+  color: #2c3e50;
+}
+
 
     h1 {
     font-size: 3em; /* Ajusta el tamaño del título */
