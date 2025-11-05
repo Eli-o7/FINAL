@@ -3,13 +3,167 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>3R Regiones</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>3R Regiones - Sobre Nosotros</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40j/5n3gV6h/gV9G9iI/2gV75k3K7kY5l+N5Zl3z+2z7sV+2l+2v8z1u5w9p4i4T7p0q7P0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #273D62;
+      color: white;
+      padding: 15px 40px;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .btn-reserva {
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-reserva:hover {
+      background-color: white;
+      color: #2c3e50;
+    }
+
+    .fondo {
+      background-image: url('imagenes/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .fondo h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #1f3a5d;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .fas, .fab {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #1f3a5d;
+      transition: color 0.3s;
+    }
+
+    ul li:hover {
+      color: #f8a500;
+    }
+    
+    ul li:hover .fas, ul li:hover .fab {
+      color: #f8a500;
+    }
+
+    .game-button-container {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px; /* Añadido margen inferior para separar del footer */
+    }
+
+    .btn-jugar {
+      background-color: #273D62; /* Color similar al header o un azul distintivo */
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      display: inline-block; /* Para que padding y margin funcionen correctamente */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-jugar:hover {
+      background-color: #1f3a5d; /* Tono más oscuro al pasar el ratón */
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #273D62;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">
-            <img src="imagenes/logo.jpg" alt="Logo 3R Regiones">
+      <img src="imagenes/logo.jpg" alt="Logo 3R Regiones">
     </div>
 
     <nav>
@@ -26,7 +180,7 @@
     <h1>Sobre Nosotros</h1>
   </div>
 
-    <section class="container">
+  <section class="container">
     <h2>Historia</h2>
     <p>
       Fundado en 1970 por Alejandro Gamarra, 3 Regiones es un restaurante
@@ -50,151 +204,15 @@
     </ul>
   </section>
 
+  <div class="game-button-container">
+    <a href="game.html" class="btn-jugar">JUGAR</a>
+  </div>
 
   <footer>
     <p>&copy; 2025</p>
   </footer>
 
-  <style>
-    body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Asegura que el cuerpo ocupe toda la pantalla */
-    }
-
-    .fondo {
-    background-image: url('imagenes/fondo.jpg'); /* Ruta de tu imagen */
-    background-size: cover; /* La imagen cubre toda el área */
-    background-position: center; /* La imagen se centra */
-    height: 10000vh; /* Asegura que ocupe toda la altura de la ventana */
-    display: flex; /* Usamos flexbox para centrar el contenido */
-    justify-content: center; /* Centra el contenido en el eje horizontal */
-    align-items: center; /* Centra el contenido en el eje vertical */
-    text-align: center; /* Centra el texto */
-    color: white; /* Cambia el color del texto a blanco para hacerlo visible sobre el fondo */
-    }
-
-    header {
-  background-color: #273D62;
-  color: white;
-  padding: 15px 40px;
-  height: 80px;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo img {
-  height: 50px;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.btn-reserva {
-  background-color: transparent;
-  border: 2px solid white;
-  padding: 8px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-reserva:hover {
-  background-color: white;
-  color: #2c3e50;
-}
-
-
-    h1 {
-    font-size: 3em; /* Ajusta el tamaño del título */
-    }
-
-    p {
-    font-size: 1.2em; /* Ajusta el tamaño del párrafo */
-    }
-
-    button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    }
-
-    button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Cambio de color al pasar el ratón */
-    }
-
-        /* Estilos generales */
-    body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    }
-
-    .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    }
-
-
-
-    h2 {
-    font-size: 2rem;
-    color: #1f3a5d;
-    margin-top: 30px;
-    }
-
-    p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    }
-
-    ul {
-    list-style: none;
-    padding: 0;
-    }
-
-    ul li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    }
-
-    /* Iconos sociales */
-    .fas, .fab {
-    margin-right: 10px;
-    font-size: 1.5rem;
-    color: #1f3a5d;
-    }
-
-    /* Resaltar los iconos sociales al pasar el mouse */
-    ul li:hover {
-    color: #f8a500;
-    }
-
-
-    </style>
-  <script src="script.js"></script>
+  <script src="game.js"></script> 
+  <script src="script.js"></script> 
 </body>
 </html>
