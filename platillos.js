@@ -9,7 +9,7 @@ const platillos = [
           "Ingredientes: Presa de pollo, arveja, choclo, pimiento y sarsa criolla o papa a la huancaína",
         precio: 25,
         puntuacion: 5,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Arroz_con_pollo_peruano.jpg",
+        imagen: "https://i.ytimg.com/vi/4kmy5EOQqqM/maxresdefault.jpg",
       },
       {
         nombre: "Ají de gallina",
@@ -17,7 +17,7 @@ const platillos = [
           "Ingredientes: Papa, crema de ají de gallina, pollo deshilachado, medio huevo sancochado, aceituna y arroz",
         precio: 22,
         puntuacion: 5,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Aji_de_gallina.jpg",
+        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQF3lvx_fPJyNqSuYyrfinneWiJFyJJ0Yifo7-0N37c7fFEycNq",
       },
     ],
   },
@@ -30,7 +30,7 @@ const platillos = [
           "Ingredientes: Chancho frito previamente sancochado, con camote y mote",
         precio: 24,
         puntuacion: 5,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Chicharron_peruano.jpg",
+        imagen: "https://www.abc.com.py/resizer/v2/P3KMQJGD2BAFHH5IW44ILMVV5I.jpg?auth=8ba1f3b5833915a50f40d1ad6c522e0029dc90a10694952dfa60a80fb34270af&width=910&height=590&smart=true",
       },
       {
         nombre: "Caldo de res",
@@ -38,7 +38,7 @@ const platillos = [
           "Ingredientes: Verduras y carne de res",
         precio: 20,
         puntuacion: 4,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Chicharron_peruano.jpg",
+        imagen: "https://cdn7.kiwilimon.com/recetaimagen/33487/960x640/38842.jpg.jpg",
       }
     ],
   },
@@ -51,7 +51,7 @@ const platillos = [
           "Ingredientes: Arroz, presa de pollo, palillo, sacha culantro, huevo hervido y aceituna",
         precio: 30,
         puntuacion: 5,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Chicharron_peruano.jpg",
+        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTUnj34VDVIbe_36mwLZNUijhONn0Q06Iw21NZb7BxCC5RlPrHz",
       },
       {
         nombre: "Tacacho con cecina",
@@ -59,7 +59,7 @@ const platillos = [
           "Ingredientes: Tacacho, cecina y salsa amazónica",
         precio: 25,
         puntuacion: 4,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Chicharron_peruano.jpg",
+        imagen: "https://i.ytimg.com/vi/wlZ-aUEXWF8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwOqitFrF0km0Bay-IG6BadudKBQ",
       }
     ],
   },
