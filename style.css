@@ -1,65 +1,63 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Georgia", serif;
+  background-color: #fff;
+  color: #222;
+  overflow-y: scroll;
 }
 
 header {
-    background-color: #273D62;
-    color: white;
-    padding: 15px 40px;
-    height: 80px;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #273D62;
+  color: white;
+  padding: 15px 40px;
+  height: 80px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
-    height: 50px;
+  height: 50px;
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    transition: color 0.2s;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
 .btn-reserva {
-    background-color: transparent;
-    border: 2px solid white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-reserva:hover {
-    background-color: white;
-    color: #2c3e50;
+  background-color: white;
+  color: #2c3e50;
 }
 
 .hero-section {
