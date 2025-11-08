@@ -1,33 +1,46 @@
-let score = 0; 
+let score = 0; // Puntaje global
 let gameStarted = false;
 
+// Función para iniciar el juego
 function startGame() {
   console.log("startGame called, gameStarted:", gameStarted);
   if (gameStarted) return;
 
   gameStarted = true;
   const startBtn = document.getElementById("start-game-btn");
-  startBtn.textContent = "🎮 Juego Iniciado";
+  
+  // Modificar clases del botón al iniciar
+  startBtn.textContent = "Juego Iniciado";
   startBtn.disabled = true;
-  startBtn.classList.add("bg-gray-400", "cursor-not-allowed");
-  startBtn.classList.remove("bg-green-500", "hover:bg-green-600");
+  startBtn.classList.add("bg-gray-400", "cursor-not-allowed", "hover:bg-gray-400");
+  startBtn.classList.remove("bg-blue-600", "hover:bg-blue-700"); 
 
-  console.log("Starting coin spawn...");
+  // Iniciar spawn de comidas. CORRECCIÓN: Llamar a spawnCoin() e INTERVALO con spawnCoin()
+  console.log("Starting Hamburguesa spawn...");
   spawnCoin();
-  setInterval(spawnCoin, 3000);
+  setInterval(spawnCoin, 3000); // <-- CORREGIDO: Usar spawnCoin
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const player = document.querySelector(".game-player");
   const gameContainer = document.querySelector(".game-container");
+  
+  
+  if (!player || !gameContainer) {
+      console.error("Player or Game Container element not found.");
+      return;
+  }
+  
   const gameWidth = gameContainer.clientWidth;
   const gameHeight = gameContainer.clientHeight;
 
+  
   let playerX = gameWidth / 2 - 15; 
   let playerY = gameHeight / 2 - 15;
   player.style.left = `${playerX}px`;
   player.style.top = `${playerY}px`;
 
+  
   player.dataset.moveWidth = gameWidth;
   player.dataset.moveHeight = gameHeight;
 });
@@ -38,7 +51,10 @@ document.addEventListener("keydown", function (event) {
   const player = document.querySelector(".game-player");
   const moveWidth = parseFloat(player.dataset.moveWidth);
   const moveHeight = parseFloat(player.dataset.moveHeight);
-  collectCoins();
+  
+  
+  collectCoins(); 
+  
   let playerX = parseInt(player.style.left);
   let playerY = parseInt(player.style.top);
 
@@ -72,11 +88,14 @@ document.addEventListener("keydown", function (event) {
 });
 
 function spawnCoin() {
-  console.log("spawnCoin called, gameStarted:", gameStarted);
+  // CORRECCIÓN: Mantener el nombre de la función consistente
+  console.log("spawnCoin (Hamburguesa) called, gameStarted:", gameStarted); 
   if (!gameStarted) return;
 
-  const coin = document.createElement("div");
-  coin.classList.add("coin");
+  // CORRECCIÓN: Usamos la clase 'coin' que es la definida en tu HTML/CSS
+  const coin = document.createElement("div"); 
+  coin.classList.add("coin"); 
+  
   const gameContainer = document.querySelector(".game-container");
 
   if (!gameContainer) {
@@ -86,6 +105,7 @@ function spawnCoin() {
 
   const gameWidth = gameContainer.clientWidth;
   const gameHeight = gameContainer.clientHeight;
+
   
   const coinX = Math.random() * (gameWidth - 24);
   const coinY = Math.random() * (gameHeight - 24);
@@ -96,11 +116,6 @@ function spawnCoin() {
   gameContainer.appendChild(coin);
 
   
-  console.log(
-    "Coin added, total coins:",
-    document.querySelectorAll(".coin").length
-  );
-
   setTimeout(() => {
     if (coin.parentNode) {
       coin.remove();
@@ -109,15 +124,19 @@ function spawnCoin() {
   }, 5000);
 }
 
+
 function collectCoins() {
   const player = document.querySelector(".game-player");
-  const coins = document.querySelectorAll(".coin");
-  const scoreBox = document.getElementById("score-box");
+  // CORRECCIÓN: Volvemos a usar la clase 'coin' ya que es la que se añade en spawnCoin
+  const coins = document.querySelectorAll(".coin"); 
+  
+  const scoreBox = document.getElementById("score-box"); 
 
   coins.forEach((coin) => {
     const coinRect = coin.getBoundingClientRect();
     const playerRect = player.getBoundingClientRect();
 
+    
     if (
       playerRect.x < coinRect.x + coinRect.width &&
       playerRect.x + playerRect.width > coinRect.x &&
@@ -126,7 +145,11 @@ function collectCoins() {
     ) {
       coin.remove();
       score++;
-      if (scoreBox) scoreBox.value = score;
+      
+      
+      if (scoreBox) {
+          scoreBox.value = score.toString().padStart(2, '0');
+      }
     }
   });
 }
