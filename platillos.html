@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú de Platillos</title>
+  <!-- Agregar Tailwind CSS desde CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Barra superior -->
+  <header class="bg-blue-900 text-white flex justify-between items-center px-8 py-4">
+    <h1 class="text-2xl font-bold tracking-wide">BR RESTAURANTE</h1>
+    <nav class="flex gap-6 text-lg">
+      <a href="#" class="hover:text-gray-300">Carta</a>
+      <a href="#" class="hover:text-gray-300">Locales</a>
+      <a href="#" class="hover:text-gray-300">Nosotros</a>
+      <button class="bg-blue-700 hover:bg-blue-600 px-3 py-1 rounded-md">Reserva</button>
+    </nav>
+  </header>
+
+  <!-- Título principal -->
+  <main class="max-w-5xl mx-auto p-8">
+    <h2 class="text-4xl font-bold text-center mb-10 text-blue-900">Platillos</h2>
+    <div id="platillos-container"></div>
+  </main>
+
+  <!-- Script para manejar los platillos -->
+  <script src="platillos.js"></script>
+</body>
+</html>
