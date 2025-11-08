@@ -14,83 +14,163 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <style>
+      /* --- Estilos para simular el Header de la Imagen (Mantenidos) --- */
+      .header-sim {
+        background-color: #041f3d; 
+        color: white;
+        padding: 0.5rem 0; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+      }
+      .header-sim-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-container {
+        height: 60px; 
+        display: flex;
+        align-items: center;
+      }
+      .logo-img {
+        height: 100%; 
+        width: auto;
+        object-fit: contain;
+      }
+      .nav-link {
+        margin-left: 1.5rem;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+        text-decoration: none;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 500;
+      }
+      .nav-reserve {
+        background-color: #007bff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 1.1rem;
+        transition: background-color 0.2s;
+      }
+
+      /* --- Estilos del Juego (Mantenidos) --- */
+      .game-title {
+        font-family: serif; 
+        font-weight: bold;
+      }
+      /* Estilo para el botón "Como jugar" (Nuevo) */
+      .button-howto {
+          /* Fondo blanco con borde, texto azul */
+          background-color: white;
+          border: 1px solid #007bff;
+          color: #007bff;
+          padding: 0.5rem 1rem;
+          /* Curvatura en las esquinas */
+          border-radius: 0.5rem; 
+          font-family: sans-serif;
+          font-weight: 600;
+          transition: all 0.2s;
+          display: inline-block; /* Asegura que no ocupe todo el ancho */
+      }
+      .button-howto:hover {
+          background-color: #f0f8ff; /* Azul muy claro al pasar el ratón */
+      }
+      
+      .diamond {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 15px solid #ccc;
+        transform: translateY(-5px) rotate(180deg);
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
-    <div id="header"></div>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.jpg" alt="Logo 3R Regiones">
+        </div>
 
-    <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
+        <nav>
+            <ul>
+                <li><a href="carta.html">Carta</a></li>
+                <li><a href="locales.html">Locales</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="reserva.html" class="btn-reserva">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="header" class="header-sim">
+      <div class="header-sim-container">
+        
+        <div class="logo-container">
+            <img src="imagenes/logo.jpg" alt="Logo Regiones" class="logo-img" />
+        </div>
+
+        
+        <div class="flex items-center">
+          <a href="#" class="nav-link">Carta</a>
+          <a href="#" class="nav-link">Locales</a>
+          <a href="#" class="nav-link">Nosotros</a>
+          <a href="#" class="nav-link nav-reserve ml-4">Reserva</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="min-h-screen bg-white py-8">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <div
-            class="game-area bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
-          >
-            <h1
-              class="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-            >
-              Anime Game
-            </h1>
-            <p class="text-gray-600 dark:text-gray-300 mb-6">
-              ¡Usa las flechas del teclado para mover a Mario y recoger monedas!
+          <div class="game-area bg-white rounded-lg p-8">
+            <h1 class="text-5xl game-title text-gray-900 mb-6">Juego</h1>
+
+            <p class="text-gray-700 text-lg mb-6 game-instruction">
+              ¡Usa las flechitas del teclado para mover a *"Chef"*!
             </p>
 
-            
-            <button
-              id="start-game-btn"
-              class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg mb-6 transition-colors duration-200 shadow-md hover:shadow-lg"
-              onclick="startGame()"
-            >
-              🎮 Comenzar Juego
-            </button>
-
-           
-            <div class="mb-6">
-              <label
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-              >
+            <div class="flex justify-center items-center space-x-2 mb-6">
+              <span class="block text-xl font-semibold text-gray-900 score-text">
                 Puntaje:
-              </label>
-              <input
-                id="score-box"
-                type="text"
-                value="0"
-                readonly
-                class="w-16 px-3 py-2 text-center border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white font-bold text-lg"
-              />
-            </div>
-
-            
-            <div
-              class="game-container relative w-[600px] h-[400px] bg-gray-300 dark:bg-gray-600 border-2 border-blue-500 mx-auto overflow-hidden rounded-lg shadow-inner"
-            >
+              </span>
               <div
-                class="game-player absolute w-[30px] h-[30px] bg-cover bg-center bg-no-repeat"
-                style="background-image: url('imagenes/mario.png')"
-              ></div>
-            </div>
-
-            
-            <div class="mt-6 text-sm text-gray-600 dark:text-gray-400">
-              <div
-                class="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto"
+                class="inline-block px-3 py-1 border-2 border-gray-400 bg-white text-gray-900 font-bold text-xl score-box-display"
               >
-                <div>
-                  <h3 class="font-semibold mb-2">Controles:</h3>
-                  <ul class="space-y-1">
-                    <li>↑ Flecha Arriba</li>
-                    <li>↓ Flecha Abajo</li>
-                    <li>← Flecha Izquierda</li>
-                    <li>→ Flecha Derecha</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-2">Objetivo:</h3>
-                  <ul class="space-y-1">
-                    <li>🪙 Recoge las monedas</li>
-                    <li>⏰ Las monedas desaparecen en 5s</li>
-                    <li>📈 Aumenta tu puntaje</li>
-                  </ul>
-                </div>
+                00
               </div>
+            </div>
+
+            <div
+              class="game-container relative w-[600px] h-[300px] bg-blue-300 border-2 border-blue-500 mx-auto overflow-hidden rounded-lg shadow-inner"
+            ></div>
+
+            <div class="flex flex-col items-center mt-8">
+                <button
+                    id="start-game-btn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md mb-4 transition-colors duration-200 shadow-md hover:shadow-lg button-game"
+                    onclick="startGame()"
+                >
+                    Comenzar Juego
+                </button>
+                
+                <button
+                    class="button-howto"
+                    onclick="showInstructions()"
+                >
+                    Como jugar
+                </button>
+            </div>
+            
+            <div class="mt-4">
+              <div class="diamond"></div>
             </div>
           </div>
         </div>
